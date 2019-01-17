@@ -21,10 +21,10 @@ $("#submit").on("click", function (event) {
     //   alert("working");
     event.preventDefault();
 
-    name = $("#name-input").val().trim();
-    destination = $("#destination-input").val().trim();
-    time = $("#time-input").val().trim();
-    frequency = $("#frequency-input").val().trim();
+    name = $("#tname").val().trim();
+    destination = $("#tdestination").val().trim();
+    time = $("#ttime").val().trim();
+    frequency = $("#tfrequency").val().trim();
 
     // push it to the limit! I mean database
     database.ref().push({
@@ -34,5 +34,29 @@ $("#submit").on("click", function (event) {
         frequency: frequency,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
+    console.log(database);
 
+    // clear the input feilds
+    $("#tname").val("");
+
+});
+
+database.ref().on("child_added", function (childSnapshot) {
+    console.log(childSnapshot.val());
+
+    name = childSnapshot.val().name;
+    destination = childSnapshot.val().destination;
+    time = childSnapshot.val().time;
+    frequency = childSnapshot.val().frequency;
+
+
+    // make that row tho
+    var newRow = $("<tr>").append(
+        $("<td>").text(name),
+        $("<td>").text(destination),
+        $("<td>").text(time),
+        $("<td>").text(frequency),
+    );
+
+    $("#newtrain").append(newRow);
 });
