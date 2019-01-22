@@ -36,10 +36,12 @@
                 <th scope="col">Destination</th>
                 <th scope="col">First Train Time -- (Military Time)</th>
                 <th scope="col">Frequency -- (Minutes)</th>
+                <th scope="col">Next Train</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="all-display">
             </tbody>
+           
           </table>
 
 <!-- FORM INPUT BOX-->
@@ -60,6 +62,7 @@
                     <label for="frequency-input">Frequency -- (Minutes)</label>
                     <input type="tfrequency" class="form-control" id="tfrequency" placeholder="frequency">
                   </div>
+                 
 
        <!--submit button-->
         <button type="submit" id="submit" class="btn btn-primary" style="background-color: black;" >Submit</button>
@@ -71,5 +74,6 @@
      <!-- JavaScript -->
   <script src="main.js"></script>
     
+  
 </body>
 </html>
