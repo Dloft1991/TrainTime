@@ -78,3 +78,41 @@ database.ref().on("child_added", function (childSnapshot) {
 
 
 
+console.log(response.near_earth_objects[day1][0].name);
+   console.log(response.near_earth_objects[day1][0].estimated_diameter.miles.estimated_diameter_max);
+   console.log(response.near_earth_objects[day1][0].is_potentially_hazardous_asteroid);
+   console.log(response.near_earth_objects[day1][0].close_approach_data[0].close_approach_date);
+   console.log(response.near_earth_objects[day1][0].close_approach_data[0].miss_distance.miles);
+//one
+var name = response.near_earth_objects[day2][0].name;
+var miles = response.near_earth_objects[day2][0].estimated_diameter.miles.estimated_diameter_max;
+var hazardous = response.near_earth_objects[day2][0].is_potentially_hazardous_asteroid;
+var close = response.near_earth_objects[day2][0].close_approach_data[0].close_approach_date;
+var missed = response.near_earth_objects[day2][0].close_approach_data[0].miss_distance.miles;
+// two 
+var name = response.near_earth_objects[day3][0].name;
+var miles = response.near_earth_objects[day3][0].estimated_diameter.miles.estimated_diameter_max;
+var hazardous = response.near_earth_objects[day3][0].is_potentially_hazardous_asteroid;
+var close = response.near_earth_objects[day3][0].close_approach_data[0].close_approach_date;
+var missed = response.near_earth_objects[day3][0].close_approach_data[0].miss_distance.miles;
+// three
+var name = response.near_earth_objects[day4][0].name;
+var miles = response.near_earth_objects[day4][0].estimated_diameter.miles.estimated_diameter_max;
+var hazardous = response.near_earth_objects[day4][0].is_potentially_hazardous_asteroid;
+var close = response.near_earth_objects[day4][0].close_approach_data[0].close_approach_date;
+var missed = response.near_earth_objects[day4][0].close_approach_data[0].miss_distance.miles;
+//four
+var name = response.near_earth_objects[day5][0].name;
+var miles = response.near_earth_objects[day5][0].estimated_diameter.miles.estimated_diameter_max;
+var hazardous = response.near_earth_objects[day5][0].is_potentially_hazardous_asteroid;
+var close = response.near_earth_objects[day5][0].close_approach_data[0].close_approach_date;
+var missed = response.near_earth_objects[day5][0].close_approach_data[0].miss_distance.miles;
+
+$("#all-display").append(
+    ' <tr><td>' + name +
+    ' </td><td>' + miles +
+    ' </td><td>' + hazardous +
+    ' </td><td>' + close +
+    ' </td><td>' + missed + ' </td></tr>');
+
+
